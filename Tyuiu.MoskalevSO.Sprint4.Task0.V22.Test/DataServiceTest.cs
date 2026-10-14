@@ -15,7 +15,7 @@ namespace Tyuiu.MoskalevSO.Sprint4.Task0.V22.Test
             int res = ds.GetSumOddArrEl(array);
             int wait = 46;
 
-            Assert.AreEqual(wait, res);
+            Assert.AreEqual(wait, res); 
         }
     }
 }
