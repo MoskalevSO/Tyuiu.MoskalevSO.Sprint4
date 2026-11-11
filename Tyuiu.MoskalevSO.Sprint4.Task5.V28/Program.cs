@@ -1,40 +1,48 @@
-﻿using Tyuiu.MoskalevSO.Sprint4.Task5.Lib;
+﻿using Tyuiu.MoskalevSO.Sprint4.Task5.V28.Lib;
 
-DataService ds = new DataService();
-
-int rows = 5;
-int columns = 5;
-int[,] matrix = new int[rows, columns];
-Random rnd = new Random();
-
-for (int i = 0; i < rows; i++)
+namespace Tyuiu.MoskalevSO.Sprint4.Task5.V28
 {
-    for (int j = 0; j < columns; j++)
+    class Program
     {
-        matrix[i, j] = rnd.Next(-6, 4);
+        static void Main(string[] args)
+        {
+            DataService ds = new DataService();
+            Random rnd = new Random();
+
+            int[,] matrix = new int[5, 5];
+            for (int i = 0; i < 5; i++)
+            {
+                for (int j = 0; j < 5; j++)
+                {
+                    matrix[i, j] = rnd.Next(-6, 4);
+                }
+            }
+
+            Console.WriteLine("***************************************************************************");
+            Console.WriteLine("* ИСХОДНЫЕ ДАННЫЕ                                                         *");
+            Console.WriteLine("***************************************************************************");
+            PrintMatrix(matrix);
+
+            int[,] result = ds.GetMatrix(matrix);
+
+            Console.WriteLine("***************************************************************************");
+            Console.WriteLine("* РЕЗУЛЬТАТ                                                               *");
+            Console.WriteLine("***************************************************************************");
+            PrintMatrix(result);
+
+            Console.ReadKey();
+        }
+
+        static void PrintMatrix(int[,] m)
+        {
+            for (int i = 0; i < m.GetLength(0); i++)
+            {
+                for (int j = 0; j < m.GetLength(1); j++)
+                {
+                    Console.Write($"{m[i, j],4}");
+                }
+                Console.WriteLine();
+            }
+        }
     }
 }
-
-Console.WriteLine("***** ИСХОДНЫЕ ДАННЫЕ *****");
-for (int i = 0; i < rows; i++)
-{
-    for (int j = 0; j < columns; j++)
-    {
-        Console.Write(matrix[i, j].ToString().PadLeft(4));
-    }
-    Console.WriteLine();
-}
-
-int[,] result = ds.GetMatrix(matrix);
-
-Console.WriteLine("***** РЕЗУЛЬТАТ *****");
-for (int i = 0; i < rows; i++)
-{
-    for (int j = 0; j < columns; j++)
-    {
-        Console.Write(result[i, j].ToString().PadLeft(4));
-    }
-    Console.WriteLine();
-}
-
-Console.ReadKey();
