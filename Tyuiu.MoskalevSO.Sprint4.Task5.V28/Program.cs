@@ -23,7 +23,7 @@ namespace Tyuiu.MoskalevSO.Sprint4.Task5.V28
             Console.WriteLine("***************************************************************************");
             PrintMatrix(matrix);
 
-            int[,] result = ds.GetMatrix(matrix);
+            int[,] result = ds.Calculate(matrix);
 
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* РЕЗУЛЬТАТ                                                               *");

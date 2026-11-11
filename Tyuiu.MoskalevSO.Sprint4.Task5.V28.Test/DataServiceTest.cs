@@ -7,7 +7,7 @@ namespace Tyuiu.MoskalevSO.Sprint4.Task5.V28.Test
     public class DataServiceTest
     {
         [TestMethod]
-        public void ValidGetMatrix()
+        public void ValidCalculate()
         {
             DataService ds = new DataService();
 
@@ -27,7 +27,7 @@ namespace Tyuiu.MoskalevSO.Sprint4.Task5.V28.Test
                 { 0, 3, 1, 0, 0 }
             };
 
-            int[,] res = ds.GetMatrix(matrix);
+            int[,] res = ds.Calculate(matrix);
             CollectionAssert.AreEqual(wait, res);
         }
     }
