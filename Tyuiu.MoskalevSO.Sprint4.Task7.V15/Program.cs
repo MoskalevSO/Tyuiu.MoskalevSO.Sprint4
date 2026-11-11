@@ -20,12 +20,13 @@ namespace Tyuiu.MoskalevSO.Sprint4.Task7.V15
             Console.WriteLine($"Строка: {str}");
             Console.WriteLine();
 
-            int[,] matrix = ds.GetMatrix(n, m, str);
-            for (int i = 0; i < matrix.GetLength(0); i++)
+            int k = 0;
+            for (int i = 0; i < n; i++)
             {
-                for (int j = 0; j < matrix.GetLength(1); j++)
+                for (int j = 0; j < m; j++)
                 {
-                    Console.Write($"{matrix[i, j],4}");
+                    Console.Write($"{str[k],4}");
+                    k++;
                 }
                 Console.WriteLine();
             }
