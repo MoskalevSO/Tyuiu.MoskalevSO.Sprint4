@@ -20,7 +20,7 @@ namespace Tyuiu.MoskalevSO.Sprint4.Task6.V3
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* РЕЗУЛЬТАТ                                                               *");
             Console.WriteLine("***************************************************************************");
-            Console.WriteLine("Количество элементов, длина которых меньше 6: " + result);
+            Console.WriteLine(result);
 
             Console.ReadKey();
         }
